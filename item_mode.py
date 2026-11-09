@@ -22,6 +22,8 @@ class ItemMode:
             elif event.type == SDL_KEYDOWN and event.key in (SDLK_i, SDLK_ESCAPE):
                 game_framework.pop_mode()
                 return
+            elif event.type == SDL_KEYDOWN and event.key in (SDLK_0, SDLK_1, SDLK_2):
+                self.boy.ball_size = {SDLK_0: 0, SDLK_1: 21, SDLK_2: 41}[event.key]
             else:
                 self.boy.handle_event(event)
 
